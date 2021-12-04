@@ -1,6 +1,7 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, inject } from 'vue';
 
+const store = inject('store');
 defineProps({
   msg: {
     type: String,
@@ -13,6 +14,7 @@ const count = ref(0);
 
 <template>
   <h1>{{ msg }}</h1>
+  <h2>{{ store.currentUrl }}</h2>
 
   <p>
     Recommended IDE setup:
