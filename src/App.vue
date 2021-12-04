@@ -1,25 +1,31 @@
 <script setup>
-import { provide } from '@vue/runtime-core';
+import { provide, reactive } from 'vue';
 import store from './store';
-import HelloWorld from './components/HelloWorld.vue';
+import RequestPanel from './components/RequestPanel.vue';
 
-provide('store', store);
+const state = reactive(store);
+provide('store', state);
 </script>
 
 <template>
-  <img
-    alt="Vue logo"
-    src="./assets/logo.png">
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <div>
+    <h1>API client</h1>
+    <p>send requests to external APIs</p>
+  </div>
+  <RequestPanel />
 </template>
 
 <style lang="scss">
+* {
+  margin: 0;
+  padding: 0;
+
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

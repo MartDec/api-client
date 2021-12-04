@@ -1,3 +1,7 @@
 export default {
-  currentUrl: window.location.origin,
+  currentUrl: null,
+  currentMethod: 'GET',
+  availableMethods: [
+    'GET', 'POST', 'PUT', 'DELETE'
+  ],
 };
